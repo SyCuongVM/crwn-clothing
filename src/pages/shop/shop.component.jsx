@@ -9,14 +9,14 @@ import { connect } from 'react-redux';
 import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container'
 import CollectionPageContainer from '../collection/collection.container';
 // import { selectIsCollectionsFetching, selectIsCollectionsLoaded } from '../../redux/shop/shop.selectors';
-import { fetchCollectionStartAsync } from '../../redux/shop/shop.actions';
+import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
 // const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 // const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
 class ShopPage extends React.Component {
   componentDidMount() {
-    this.props.fetchCollectionStartAsync();
+    this.props.fetchCollectionsStart();
   }
 
   render() {
@@ -43,7 +43,7 @@ class ShopPage extends React.Component {
 //   isCollectionsLoaded: selectIsCollectionsLoaded
 // });
 const mapDispatchToProps = dispatch => ({
-  fetchCollectionStartAsync: () => dispatch(fetchCollectionStartAsync())
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
 });
 // export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
 export default connect(null, mapDispatchToProps)(ShopPage);
